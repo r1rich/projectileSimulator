@@ -1,0 +1,176 @@
+<!-- 
+    index.html
+ -->
+
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<!--Inspired by: 
+    https://getbootstrap.com/docs/4.4/utilities/sizing/ 
+    https://getbootstrap.com/docs/4.0/utilities/vertical-align/ -->
+
+<body onload="onLoadStart()" class='page-bg'>
+    <div class="d-flex justify-content-center">
+        <div class="w-50">
+            <div class=" p-0 m-0 title" style="font-size: 60px;">Projectile Simulator</div>
+            <div class=" p-0 m-0 title" style="font-size: 12px;">By Richard R. Petrasch</div>
+            <div class="line"></div>
+            <div>
+                <div class=" p-0 m-0 title" style="font-size: 16px; line-height: 100px;">
+                    Change the initial velocity, launch height, gravity, and angle, and press shoot
+                    to launch a projectile and see its calculations on the right
+                </div>
+                <div class="container-fluid p-0 m-0 page-bg spacing" style="height: 10px">
+
+                    <div class="row p-5 m-5">
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid p-0 m-0 page-bg">
+                <div class="row p-5 m-5">
+                    <div class="input-group col-lg-2 page-bg">
+                    </div>
+                    <div class="col-lg-1 spacing">
+                        <p class='text-lg-left page-text align-middle row align-items-start'>Velocity</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <!-- begin cited code
+                                https://getbootstrap.com/
+                                https://getbootstrap.com/docs/4.0/components/input-group/
+                                https://getbootstrap.com/docs/4.0/utilities/spacing/
+                                https://getbootstrap.com/docs/4.0/utilities/vertical-align/-->
+                        <div class="">
+                            <div class="input-group-prepend">
+                            </div>
+                            <input id="velocitySlider" value="10" type="text" class="form-control"
+                                placeholder="Velocity" aria-label="Velocity" aria-describedby="basic-addon1">
+                        </div>
+                        <!-- End cited code-->
+                    </div>
+                    <div class="col-lg-1">
+                        <p><span id="velocityField"></span> m/s</p>
+                    </div>
+                </div>
+                <div class="row p-5 m-5">
+                    <div class="input-group col-lg-2 page-bg">
+                    </div>
+                    <div class="col-lg-1 spacing">
+                        <p class='text-lg-left page-text align-middle row align-items-start'>Height</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <!-- begin cited code
+                                https://getbootstrap.com/
+                                https://getbootstrap.com/docs/4.0/components/input-group/
+                            -->
+                        <div class="">
+                            <div class="input-group-prepend">
+                            </div>
+                            <input id="heightSlider" value="0" type="text" class="form-control" placeholder="Height"
+                                aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <!-- End cited code-->
+                    </div>
+                    <div class="col-lg-1">
+                        <p><span id="heightField"></span> m</p>
+                    </div>
+                </div>
+                <div class="row p-5 m-5">
+                    <div class="input-group col-lg-2 page-bg">
+                    </div>
+                    <div class="col-lg-1 spacing">
+                        <p class='text-lg-left page-text align-middle row align-items-start'>
+                            Gravity (acceleration)</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <!-- begin cited code
+                                https://getbootstrap.com/
+                                https://getbootstrap.com/docs/4.0/components/input-group/
+                            -->
+                        <div class="">
+                            <div class="input-group-prepend">
+                            </div>
+                            <input id="gravitySlider" value="-9.81" type="text" class="form-control" placeholder="g"
+                                aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <!-- End cited code-->
+                    </div>
+                    <div class="col-lg-1">
+                        <p><span id="gravityField"></span> m/s^2</p>
+                    </div>
+                </div>
+                <div class="row p-5 m-5">
+                    <div class="col-lg-1 spacing">
+                        <p class='text-lg-left page-text align-middle row align-items-starts'>Angle</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="">
+                            <!-- Begin Cited Code
+                                https://www.w3schools.com/tags/att_input_type_range.asp
+                                -->
+                            <input id="angleSlider" type="range" min="1" max="90" value="45" class="slider">
+                            <!-- End Cited Code -->
+                        </div>
+                    </div>
+                    <div class="col-lg-1">
+                        <p><span id="angleField"></span> °</p>
+                    </div>
+                </div>
+                <!-- Begin Cited Code: 
+                        https://getbootstrap.com/docs/4.0/components/buttons/ -->
+            </div>
+            <div class="row p-2 m-1 spacing">
+                <div class="col-lg-5">
+                    <button class="button p-2 m-2" onclick="shoot()">Shoot</button>
+                </div>
+            </div>
+            <!-- End Cited Code -->
+            <!-- Begin Cited Code: 
+                        https://getbootstrap.com/docs/4.0/components/buttons/ -->
+        </div>
+        <div class="row p-0 m-1 spacing">
+            <div class="col-lg-2 p-0 m-0">
+                <button class="button2 p-0 m-0" onclick="finalDistanceButton();">
+                    Show Final Distance</button>
+            </div>
+            <div class="col-lg-2 p-0 m-0">
+                <button class="button2 p-0 m-0" onclick="maxHeightButton();">
+                    Show Max Height</button>
+            </div>
+            <div class="col-lg-2">
+                <button class="button2 p-2 m-1" onclick="timeOfFlightButton() ;">
+                    Show Time Of Flight</button>
+            </div>
+            <div class="col-lg-2">
+                <button class="button2 p-2 m-1" onclick="allButton()">Show All</button>
+            </div>
+            <div class="col-lg-3">
+                <button class="button3 p-2 m-1" onclick="reset();">reset</button>
+            </div>
+        </div>
+        <!-- End Cited Code -->
+    </div>
+
+    <div id="base">
+        <canvas>
+        </canvas>
+        <div id="space">
+        </div>
+        <div id="InlineConsole">
+        </div>
+    </div>
+    <div id="blank">
+    </div>
+    </div>
+    </div>
+</body>
+
+
+<script src="index.js">
+
+</script>

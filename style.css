@@ -1,0 +1,236 @@
+/* 
+    style.css
+*/
+body {
+    left:20px;
+    position:absolute;
+    color: cornsilk;
+    /* font-size: 60px; */
+}
+
+title {
+    font-size: 100px;
+    color: cornsilk;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    font-size: large;
+}
+
+p {
+    color: cornsilk;
+}
+canvas {
+    display: block;
+    background-color:rgb(196, 255, 235);
+    width: 1250px;
+    height:  100%;
+}
+
+#console {
+    font-size: 25px;
+}
+
+/* Begin Cited Code
+https://getbootstrap.com/
+https://getbootstrap.com/docs/4.0/components/input-group/
+https://getbootstrap.com/docs/4.0/utilities/spacing/
+https://getbootstrap.com/docs/4.0/utilities/vertical-align/
+https://www.w3schools.com/tags/att_wrap.asp
+https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth
+*/
+.body-rp {
+    position: static;
+    left: 10px;
+    background-color: rgb(48, 80, 80);
+    background-color: rgb(218, 255, 159);
+    height: 95%;
+    margin: auto;
+    width: 95%;
+}
+
+.spacing {
+    margin-bottom: 10px;
+}
+
+.page-bg {
+    background-color: rgb(48, 80, 80);
+    left: 10px;
+    /* margin-right: 10px; */
+    color: cornsilk;
+}
+
+.-text {
+    font-size: larger;
+}
+
+.velocity-container {
+    display: flex;
+    background-color:transparent;
+    width: 600px;
+    height: 60px;
+}
+
+  .velocity-container > div{
+    background-color: transparent;
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+    justify-content: space-evenly;
+}
+
+#space {
+    max-width: 8px;
+    height: 4px;
+    color: transparent;
+}
+
+  #base div {
+     flex: 1;
+}
+
+#blank { 
+    height: 100px;
+}
+
+#base {
+    width: 1600px;
+    height: 700px;
+    /*border: 1px solid black;*/ 
+    display: flex;
+    align-items: flex-center;
+    justify-content: space-between;
+}
+
+/* End Cited Code*/
+
+
+/* Begin Cited Code
+https://stackoverflow.com/questions/35036185/adding-horizontal-line-below-the-text-like-in-the-image */
+.line {
+    display: block;
+    width: 35%;
+    height: 3px;
+    background: lightblue;
+}
+/*End Cited Code*/
+
+
+/* Inspired by: https://github.com/rwblackburn/inline-console/blob/master/src/inline-console.js */
+#InlineConsole {
+    width: 22%;
+    max-height: 100%;
+    text-align: left;
+    font-size: 1.4rem;
+    padding: 1rem;
+    font-weight: 400;
+    color: aliceblue;
+    background-color: #6c757d;
+    /*padding: 1rem;*/
+    overflow-y: scroll;
+}
+
+/* Begin cited code */
+/* https://www.w3schools.com/howto/howto_js_rangeslider.asp */
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_rangeslider */
+
+
+    .slidecontainer {
+        width: 20em; /* Width of the outside container */
+        height: 100px;
+    }
+    #VelocitySlider {
+        top: 50%;
+    }
+
+    /* The slider itself */
+    .slider {
+        -webkit-appearance: none;  /* Override default CSS styles */
+        appearance: none;
+        width: 100%; /* Full-width */
+        height: 25px; /* Specified height */
+        background: rgb(66, 110, 110); /* Grey background */
+        outline: none; /* Remove outline */
+        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+        transition: opacity .2s;
+        /*transform: translate(0, 70%);*/
+        
+        
+    }
+
+    /* Mouse-over effects */
+    .slider:hover {
+        opacity: 1; /* Fully shown on mouse-over */
+    }
+    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: rgb(24, 39, 39); /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }
+    .slider::-moz-range-thumb {
+        width: 25px; /* Set a specific slider handle width */
+        height: 50%; /* Slider handle height */
+        background: #4CAF50; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }
+
+
+/* end cited code */
+
+
+/* begin cited code */
+/* https://www.w3schools.com/tags/tag_button.asp */
+/* https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_button_css */
+
+    .button {
+        border: none;
+        color: white;
+        padding: 20px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        background-color: rgb(33, 56, 56);
+        width: 100%;
+        
+    }
+
+    .button2 {
+        border: none;
+        color: rgb(0, 0, 0);
+        padding: 20px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        background-color: rgb(157, 189, 189);;
+        width: 100%;
+        
+    }
+
+    .button3 {
+        border: none;
+        color: rgb(0, 0, 0);
+        padding: 20px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        background-color: rgb(180, 56, 56);
+        width: 100%;
+        
+    }
+    
+/* begin cited code */
